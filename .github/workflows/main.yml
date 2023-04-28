@@ -27,7 +27,7 @@ jobs:
         run: |
           new_tag=`cat tag_file`
           old_tag=`cat old_tag`
-          sed "s/$new_tag/$old_tag/" README.md
+          sed "s/$old_tag/$new_tag/" README.md
 
         
 

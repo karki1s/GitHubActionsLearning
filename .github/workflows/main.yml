@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: checking out code
         uses: actions/checkout@v2
+
+      - name: change readme
+        run: |
+          new_tag=`cat tag_file`
+          old_tag=`cat old_tag`
+          sed "s/$old_tag/$new_tag/" README.md
         
       - name: auto commit 
         uses: EndBug/add-and-commit@v9
@@ -23,11 +29,7 @@ jobs:
           message: 'Updated read me tag changed'
           push: true
           
-      - name: change readme
-        run: |
-          new_tag=`cat tag_file`
-          old_tag=`cat old_tag`
-          sed "s/$old_tag/$new_tag/" README.md
+      
 
         
 

@@ -22,7 +22,7 @@ jobs:
           echo $new_tag
           echo $old_tag
           sed -i "s/$old_tag/$new_tag/g" README.md
-          cat new_tag > old_tag
+          echo $new_tag > old_tag
           cat README.md
           git config --global user.name "karki1s"
           git config --global user.email "sk.karkisuman@gmail.com"

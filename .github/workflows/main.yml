@@ -27,15 +27,7 @@ jobs:
           author_email: self@example.com
           commit: --signoff
           message: 'Updated read me tag changed'
-          new_branch: custom-new-branch
           push: true
-      - name: merge to main
-        uses: devmasx/merge-branch@main
-        with:
-          type: now 
-          target_branch: main
-          message: Merge custom-new-branch to main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
 
         
 

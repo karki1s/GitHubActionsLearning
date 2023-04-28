@@ -16,7 +16,7 @@ jobs:
       - name: change readme
         run: |
           new_tag=`cat tag_file`
-          old_tag=`cat old_tag`\
+          old_tag=`cat old_tag`
           echo $new_tag
           echo $old_tag
           sed "s/$old_tag/$new_tag/" README.md

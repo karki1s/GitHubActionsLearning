@@ -16,7 +16,7 @@ jobs:
       - name: change readme
         run: |
           new_tag='kh-0.02'
-          old_tag='kh-0.01`
+          old_tag='kh-0.01'
           echo $new_tag
           echo $old_tag
           sed "s/$old_tag/$new_tag/g" README.md

@@ -23,6 +23,8 @@ jobs:
           echo $old_tag
           sed "s/$old_tag/$new_tag/g" README.md
           cat README.md
+          git config --global user.name "karki1s"
+          git config --global user.email "sk.karkisuman@gmail.com"
           git add .
           git commit -m 'changed readme'
           git push -u origin main

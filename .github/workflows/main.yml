@@ -21,7 +21,7 @@ jobs:
           old_tag='kh-0.01'
           echo $new_tag
           echo $old_tag
-          sed "s/$old_tag/$new_tag/g" README.md
+          sed "s/$old_tag/$new_tag/g" README.md > README.md
           cat README.md
           git config --global user.name "karki1s"
           git config --global user.email "sk.karkisuman@gmail.com"

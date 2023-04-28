@@ -21,13 +21,14 @@ jobs:
         
       - name: auto commit 
         uses: EndBug/add-and-commit@v9
-        add: '.'
-        author_name: Self
-        author_email: self@example.com
-        commit: --signoff
-        message: 'Your commit message'
-        new_branch: custom-new-branch
-        push: true
+        with:
+          add: '.'
+          author_name: Self
+          author_email: self@example.com
+          commit: --signoff
+          message: 'Your commit message'
+          new_branch: custom-new-branch
+          push: true
 
         
 

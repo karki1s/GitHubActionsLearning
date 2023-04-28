@@ -12,12 +12,6 @@ jobs:
     steps:
       - name: checking out code
         uses: actions/checkout@v2
-      
-      - name: change readme
-        run: |
-          new_tag=`cat tag_file`
-          old_tag=`cat old_tag`
-          sed "s/$new_tag/$old_tag/" README.md
         
       - name: auto commit 
         uses: EndBug/add-and-commit@v9
@@ -29,6 +23,13 @@ jobs:
           message: 'Updated read me tag changed'
           new_branch: custom-new-branch
           push: true
+          
+      - name: change readme
+        run: |
+          new_tag=`cat tag_file`
+          old_tag=`cat old_tag`
+          sed "s/$new_tag/$old_tag/" README.md
+          
       - name: merge to main
         uses: devmasx/merge-branch@master
         with:

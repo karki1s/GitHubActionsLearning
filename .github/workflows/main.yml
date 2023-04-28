@@ -19,7 +19,7 @@ jobs:
           old_tag=`cat old_tag`
           echo $new_tag
           echo $old_tag
-          sed "s/$old_tag/$new_tag/" README.md
+          sed "s/$old_tag/$new_tag/g" README.md
           cat README.md
         
       - name: auto commit 

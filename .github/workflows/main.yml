@@ -13,11 +13,11 @@ jobs:
       - name: checking out code
         uses: actions/checkout@v2
       
-      - name: extract git commit data
-        uses: rlespinasse/git-commit-data-action@v1.x
-      
-      - name: Update author information
-        run: echo  ${{env.GIT_COMMIT_AUTHOR_NAME}} > AUTHOR
+      - name: change readme
+        run: |
+          new_tag=`cat tag_file`
+          old_tag=`cat old_tag`
+          sed "s/$new_tag/$old_tag" README.md
         
       - name: auto commit 
         uses: EndBug/add-and-commit@v9
@@ -26,9 +26,16 @@ jobs:
           author_name: Self
           author_email: self@example.com
           commit: --signoff
-          message: 'Your commit message'
+          message: 'Updated read me tag changed'
           new_branch: custom-new-branch
           push: true
+      - name: merge to main
+        uses: devmasx/merge-branch@main
+        with:
+          type: now 
+          target_branch: main
+          message: Merge custom-new-branch to main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
         
 
